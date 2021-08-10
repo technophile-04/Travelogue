@@ -22,7 +22,7 @@ function PlaceDetails({ place, selected, refProp }) {
 
 	// console.log(place);
 	return (
-		<Card elevation={6}>
+		<Card elevation={6} className={classes.root}>
 			<CardMedia
 				style={{ height: 350 }}
 				image={
@@ -43,9 +43,9 @@ function PlaceDetails({ place, selected, refProp }) {
 					</Typography>
 				</Box>
 				<Box display="flex" justifyContent="space-between">
-					<Typography variant="subtitle1">Price</Typography>
+					<Typography variant="subtitle1">{place.distance_string ? 'Distance' :'Class' }</Typography>
 					<Typography variant="subtitle1" gutterBottom>
-						{place.price_level}
+						{place.distance_string ? place.distance_string : place.hotel_class}
 					</Typography>
 				</Box>
 				<Box display="flex" justifyContent="space-between">
@@ -61,7 +61,8 @@ function PlaceDetails({ place, selected, refProp }) {
 						justifyContent="space-between"
 						alignItems="center"
 					>
-						<img src={award.images.small} alt={award.display_name} />
+						{/* <img src='https://image.flaticon.com/icons/png/512/30/30665.png' alt={award.display_name} style={{height:'20px', width:'20px', color : '#C7C7C7'}}/> */}
+						<i class="fas fa-medal" style={{ color : '#C7C7C7' }}/>
 						<Typography variant="subtitle2" color="textSecondary">
 							{award.display_name}
 						</Typography>
@@ -95,8 +96,10 @@ function PlaceDetails({ place, selected, refProp }) {
 			<CardActions>
 				<Button
 					size="small"
-					color="primary"
+					color="warning"
 					onClick={() => window.open(place.web_url, '_blank')}
+					variant="outlined"
+					
 				>
 					Travelogue
 				</Button>
@@ -104,6 +107,7 @@ function PlaceDetails({ place, selected, refProp }) {
 					size="small"
 					color="primary"
 					onClick={() => window.open(place.website, '_blank')}
+					variant="contained"
 				>
 					Website
 				</Button>

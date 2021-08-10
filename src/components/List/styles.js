@@ -6,6 +6,9 @@ export default makeStyles((theme) => ({
 		minWidth: 120,
 		marginBottom: '30px',
 	},
+	desc : {
+		fontFamily: 'Spinnaker, sans-serif',
+	},
 	selectEmpty: {
 		marginTop: theme.spacing(2),
 	},

@@ -37,7 +37,7 @@ function List({
 
 	return (
 		<div className={classes.container}>
-			<Typography variant="h4">
+			<Typography variant="h4" className={classes.desc}>
 				{type === 'restaurants' ? 'Find Food & Dining around you ' : (type === 'hotels' ?  'Find Hotels around you' : 'Find Attractions around you')}
 			</Typography>
 			{isLoading ? (

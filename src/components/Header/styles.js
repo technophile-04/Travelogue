@@ -3,9 +3,21 @@ import { alpha, makeStyles } from '@material-ui/core';
 export default makeStyles((theme) => ({
 	title: {
 		display: 'none',
+		
 		[theme.breakpoints.up('sm')]: {
 			display: 'block',
 		},
+	},
+	heading: {
+		fontFamily: 'Style Script, cursive',
+		fontSize: '1.95rem',
+		fontWeight: '550',
+		lineHeight: '1.334',
+		letterSpacing: '0.3rem'
+	},
+	subHead : {
+		fontWeight : '450',
+		fontFamily: 'Spinnaker, sans-serif',
 	},
 	search: {
 		position: 'relative',

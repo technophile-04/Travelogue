@@ -4,6 +4,7 @@ import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 
 import useStyles from './styles';
+import mapStyles from './mapStyles';
 import { LocationOnOutlined } from '@material-ui/icons';
 
 function Map({
@@ -28,6 +29,7 @@ function Map({
 				options={{
 					disableDefaultUI: true,
 					zoomControl: true,
+					styles: mapStyles 
 				}}
 				onChange={(e) => {
 					setCoordinates({ lat: e.center.lat, lng: e.center.lng });

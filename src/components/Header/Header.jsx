@@ -18,11 +18,11 @@ function Header({ setCoordinates }) {
 	return (
 		<AppBar position="static">
 			<Toolbar className={classes.toolbar}>
-				<Typography variant="h5" className={classes.title}>
+				<Typography variant="h5" className={[classes.title, classes.heading]}>
 					Travelogue
 				</Typography>
 				<Box display="flex">
-					<Typography variant="h6" className={classes.title}>
+					<Typography variant="h6" className={[classes.title, classes.subHead]}>
 						Explore new places
 					</Typography>
 					<Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>

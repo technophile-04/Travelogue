@@ -1,5 +1,5 @@
 import { Header, List, Map } from './components';
-import { CssBaseline, Grid } from '@material-ui/core';
+import { createTheme, CssBaseline, Grid, ThemeProvider } from '@material-ui/core';
 import { getPlacesData, getWeatherData } from './api/index';
 import { useEffect, useState } from 'react';
 
@@ -13,6 +13,15 @@ function App() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [type, setType] = useState('restaurants');
 	const [rating, setRating] = useState('');
+
+	const darkTheme = createTheme({
+		palette: {
+			type : 'dark',
+			primary: {
+				main : '#892CDC'
+			},
+		 },
+	})
 
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition(
@@ -42,7 +51,7 @@ function App() {
 	}, [bounds, type]);
 
 	return (
-		<>
+		<ThemeProvider theme={darkTheme}>
 			<CssBaseline />
 			<Header setCoordinates={setCoordinates} />
 			<Grid container spacing={3} style={{ width: '100%' }}>
@@ -68,7 +77,7 @@ function App() {
 					/>
 				</Grid>
 			</Grid>
-		</>
+		</ThemeProvider>
 	);
 }
 
