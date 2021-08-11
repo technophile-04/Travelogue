@@ -11,9 +11,10 @@ export default makeStyles((theme) => ({
 	heading: {
 		fontFamily: 'Style Script, cursive',
 		fontSize: '1.95rem',
-		fontWeight: '550',
+		fontWeight: '600',
 		lineHeight: '1.334',
-		letterSpacing: '0.3rem'
+		letterSpacing: '0.4rem',
+		color : '#F19520'
 	},
 	subHead : {
 		fontWeight : '450',
@@ -54,5 +55,8 @@ export default makeStyles((theme) => ({
 	toolbar: {
 		display: 'flex',
 		justifyContent: 'space-between',
+		[theme.breakpoints.down('xs')]: {
+			justifyContent: 'center',
+		},
 	},
 }));

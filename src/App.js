@@ -21,6 +21,9 @@ function App() {
 			primary: {
 				main : '#892CDC'
 			},
+			secondary : {
+				main : '#F19520'
+			}
 		 },
 	})
 

@@ -31,7 +31,7 @@ function Header({ setCoordinates }) {
 								<SearchOutlined />
 							</div>
 							<InputBase
-								placeholder={!isDesktop ?'Travelogue...' : 'Search..'}
+								placeholder={!isDesktop ?'Explore New Places...' : 'Search..'}
 								classes={{ root: classes.inputRoot, input: classes.inputInput }}
 							/>
 						</div>

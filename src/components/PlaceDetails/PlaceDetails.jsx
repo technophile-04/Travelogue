@@ -105,7 +105,7 @@ function PlaceDetails({ place, selected, refProp }) {
 				</Button>
 				<Button
 					size="small"
-					color="primary"
+					color="secondary"
 					onClick={() => window.open(place.website, '_blank')}
 					variant="contained"
 				>
