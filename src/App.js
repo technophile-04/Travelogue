@@ -2,6 +2,7 @@ import { Header, List, Map } from './components';
 import { createTheme, CssBaseline, Grid, ThemeProvider } from '@material-ui/core';
 import { getPlacesData, getWeatherData } from './api/index';
 import { useEffect, useState } from 'react';
+import Footer from './components/Footer/Footer';
 
 function App() {
 	const [weatherData, setWeatherData] = useState([]);
@@ -52,31 +53,34 @@ function App() {
 
 	return (
 		<ThemeProvider theme={darkTheme}>
-			<CssBaseline />
-			<Header setCoordinates={setCoordinates} />
-			<Grid container spacing={3} style={{ width: '100%' }}>
-				<Grid item xs={12} md={4}>
-					<List
-						places={filteredPlaces.length ? filteredPlaces : places}
-						childClicked={childClicked}
-						isLoading={isLoading}
-						type={type}
-						setType={setType}
-						rating={rating}
-						setRating={setRating}
-					/>
+			<div style={{position: 'relative', minHeight : '100%'}}>
+				<CssBaseline />
+				<Header setCoordinates={setCoordinates} />
+				<Grid container spacing={3} style={{ width: '100%' }}>
+					<Grid item xs={12} md={4}>
+						<List
+							places={filteredPlaces.length ? filteredPlaces : places}
+							childClicked={childClicked}
+							isLoading={isLoading}
+							type={type}
+							setType={setType}
+							rating={rating}
+							setRating={setRating}
+						/>
+					</Grid>
+					<Grid item xs={12} md={8}>
+						<Map
+							setCoordinates={setCoordinates}
+							setBounds={setBounds}
+							coordinates={coordinates}
+							places={filteredPlaces.length ? filteredPlaces : places}
+							setChildClicked={setChildClicked}
+							weatherData={weatherData}
+						/>
+					</Grid>
 				</Grid>
-				<Grid item xs={12} md={8}>
-					<Map
-						setCoordinates={setCoordinates}
-						setBounds={setBounds}
-						coordinates={coordinates}
-						places={filteredPlaces.length ? filteredPlaces : places}
-						setChildClicked={setChildClicked}
-						weatherData={weatherData}
-					/>
-				</Grid>
-			</Grid>
+				<Footer />
+			</div>
 		</ThemeProvider>
 	);
 }

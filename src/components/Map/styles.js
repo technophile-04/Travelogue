@@ -15,8 +15,8 @@ export default makeStyles(() => ({
 	},
 	mobileMapContainer: {
 		height: '85vh',
-		width: '104%',
-		marginTop: '20px'
+		width: '95%',
+		margin : '0px 0px 22px 17px'
 	},
 	markerContainer: {
 		position: 'absolute',
